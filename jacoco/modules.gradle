@@ -63,4 +63,10 @@ project.afterEvaluate {
                     executionData.from = files(["${project.buildDir}/jacoco/${testTaskName}.exec"])
                 }
             }
+
+    tasks.register('coverAllVariants') {
+        dependsOn(provider {
+            tasks.findAll { task -> task.name.endsWith('Coverage') }
+        })
+    }
 }
