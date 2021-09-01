@@ -10,6 +10,7 @@ tasks.withType(Test) {
 }
 
 project.afterEvaluate {
+    def variants = ["debug", "prodNormalDebug"]
 
     tasks.create(name: "allDebugCoverage", type: JacocoReport) {
 
@@ -44,11 +45,16 @@ project.afterEvaluate {
         ]
 
         def jClasses = subprojects.collect { proj ->
-            "${proj.buildDir}/intermediates/javac/debug/classes"
-        }
+            variants.collect { variant ->
+                "${proj.buildDir}/intermediates/javac/$variant/classes"
+            }
+        }.flatten()
         def kClasses = subprojects.collect { proj ->
-            "${proj.buildDir}/tmp/kotlin-classes/debug"
-        }
+            variants.collect { variant ->
+                "${proj.buildDir}/tmp/kotlin-classes/$variant"
+            }
+        }.flatten()
+
         def javaClasses = jClasses.collect { path ->
             fileTree(dir: path, excludes: excludes)
         }
@@ -58,18 +64,21 @@ project.afterEvaluate {
 
         classDirectories.from = files([javaClasses, kotlinClasses])
         def sources = subprojects.collect { proj ->
-            ["${proj.projectDir}/src/main/java", "${proj.projectDir}/src/main/kotlin",
-             "${proj.projectDir}/src/debug/java", "${proj.projectDir}/src/debug/kotlin"]
+            variants.collect { variant ->
+                ["${proj.projectDir}/src/main/java", "${proj.projectDir}/src/main/kotlin",
+                 "${proj.projectDir}/src/$variant/java", "${proj.projectDir}/src/$variant/kotlin"]
+            }.flatten()
         }.flatten()
-
         sourceDirectories.from = files(sources)
 
-        def executions = subprojects.findAll { proj ->
-            def path = "${proj.buildDir}/jacoco/testDebugUnitTest.exec"
-            (new File(path)).exists()
-        }.collect {proj ->
-            "${proj.buildDir}/jacoco/testDebugUnitTest.exec"
-        }
+        def executions = subprojects.collect { proj ->
+            variants.collect { variant ->
+                def path = "${proj.buildDir}/jacoco/test${variant.capitalize()}UnitTest.exec"
+                if ((new File(path)).exists()) path else null
+            }
+        }.flatten()
+        executions.removeAll([null])
+        println executions
 
         executionData.from = files(executions)
     }
