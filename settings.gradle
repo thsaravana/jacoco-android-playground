@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "Playground"
 include ':app'
 include ':math'
+include ':text'
