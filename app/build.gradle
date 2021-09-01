@@ -24,6 +24,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "env", "api"
+
+    productFlavors {
+        prod {
+            dimension "env"
+        }
+        staging {
+            dimension "env"
+        }
+        normal {
+            dimension "api"
+        }
+        legacy {
+            dimension "api"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
