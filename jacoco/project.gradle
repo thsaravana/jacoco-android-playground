@@ -78,7 +78,6 @@ project.afterEvaluate {
             }
         }.flatten()
         executions.removeAll([null])
-        println executions
 
         executionData.from = files(executions)
     }
