@@ -13,6 +13,8 @@ buildscript {
     }
 }
 
+apply from: 'jacoco/project.gradle'
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
