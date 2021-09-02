@@ -1,5 +1,5 @@
 # jacoco-android-playground
-Playground Android project to test jacoco-report github action
+Playground Android project to test [jacoco-report](https://github.com/Madrapps/jacoco-report) github action
 
 ### Running Code Coverage at Module level
 - The `app` module has multiple product flavors, and so it has 8 variants of coverage. To run code 
