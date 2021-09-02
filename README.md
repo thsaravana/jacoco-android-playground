@@ -7,7 +7,7 @@ Playground Android project to test jacoco-report github action
   build type, run `./gradlew prodNormalDebugCoverage`
 - The `math` and `text` modules has only buildTypes, and so to get the coverage, run 
   `./gradlew debugCoverage`.
-- You could run the `.gradlew coverAllVariants` to generate code coverage reports for all variants 
+- You could run the `./gradlew coverAllVariants` to generate code coverage reports for all variants 
   supported in the app.
   
 ### Running Code Coverage for entire project
