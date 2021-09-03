@@ -9,6 +9,6 @@ class MainViewModel : ViewModel() {
     }
 
     fun verifyAccess(userId: String): Boolean {
-        return userId == "super-admin"
+        return userId == "supervisor"
     }
 }

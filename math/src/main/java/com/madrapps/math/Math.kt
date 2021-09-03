@@ -2,6 +2,10 @@ package com.madrapps.math
 
 class Arithmetic : MathOperation {
 
+    fun moduloOperation(a: Int, b: Int): Int {
+        return a % b
+    }
+
     override fun add(a: Int, b: Int): Int {
         return a + b
     }
@@ -16,10 +20,6 @@ class Arithmetic : MathOperation {
 
     override fun divide(a: Int, b: Int): Int {
         return a / b
-    }
-
-    fun modulo(a: Int, b: Int): Int {
-        return a % b
     }
 
     fun area(a: Int, b: Int): Int {
