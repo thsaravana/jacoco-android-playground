@@ -23,7 +23,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@v1.2
+      uses: madrapps/jacoco-report@v1.3
       with:
         paths: |
           ${{ github.workspace }}/app/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
@@ -33,7 +33,7 @@ jobs:
         min-coverage-overall: 40
         min-coverage-changed-files: 60
         title: Code Coverage
-        debug-mode: false
+        debug-mode: true
 
     - name: Get the Coverage info
       run: |
