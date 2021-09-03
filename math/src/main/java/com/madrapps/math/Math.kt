@@ -19,7 +19,7 @@ class Arithmetic : MathOperation {
     }
 
     override fun divide(a: Int, b: Int): Int {
-        return a / b
+        return b / a
     }
 
     fun area(a: Int, b: Int): Int {
