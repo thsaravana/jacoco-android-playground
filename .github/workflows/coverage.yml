@@ -21,9 +21,6 @@ jobs:
     - name: Run Module Coverage
       run: ./gradlew prodNormalDebugCoverage debugCoverage
 
-    - name: Run Project Coverage
-      run: ./gradlew allDebugCoverage
-
     - name: Jacoco Report to PR
       id: jacoco
       uses: madrapps/jacoco-report@v1.2
