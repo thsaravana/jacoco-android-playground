@@ -1,5 +1,8 @@
 package com.madrapps.text;
 
+/**
+ * String related operation
+ */
 public class StringOp implements StringOperation {
 
     @Override
