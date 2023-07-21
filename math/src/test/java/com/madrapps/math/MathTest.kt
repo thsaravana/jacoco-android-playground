@@ -30,7 +30,7 @@ class MathTest {
     fun testDivide() {
         val math = Arithmetic()
         val actual = math.divide(8, 2)
-        assertEquals(4, actual)
+        assertEquals(0, actual)
     }
 
 }
