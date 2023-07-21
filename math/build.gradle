@@ -6,6 +6,8 @@ plugins {
 apply from: '../jacoco/modules.gradle'
 
 android {
+    namespace = "com.madrapps.math"
+
     compileSdk 30
 
     defaultConfig {
