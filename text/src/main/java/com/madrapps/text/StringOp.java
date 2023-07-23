@@ -14,4 +14,9 @@ public class StringOp implements StringOperation {
     public boolean startsWith(String source, String chars) {
         return source.startsWith(chars);
     }
+
+    @Override
+    public boolean replace(String from, String to) {
+        return false;
+    }
 }
