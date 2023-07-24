@@ -11,4 +11,8 @@ class MainViewModel : ViewModel() {
     fun verifyAccess(userId: String): Boolean {
         return userId == "super-admin"
     }
+
+    fun verifyPassword(password: String): Boolean {
+        return password.isNotBlank()
+    }
 }
