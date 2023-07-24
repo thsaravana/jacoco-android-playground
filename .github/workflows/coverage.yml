@@ -32,6 +32,7 @@ jobs:
         min-coverage-overall: 40
         min-coverage-changed-files: 60
         title: Code Coverage
+        update-comment: true
         debug-mode: true
 
     - name: Get the Coverage info
