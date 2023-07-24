@@ -27,13 +27,12 @@ jobs:
       with:
         paths: |
           ${{ github.workspace }}/app/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
-          ${{ github.workspace }}/math/build/reports/jacoco/debugCoverage/debugCoverage.xml,
-          ${{ github.workspace }}/text/build/reports/jacoco/debugCoverage/debugCoverage.xml
+          ${{ github.workspace }}/**/build/reports/jacoco/debugCoverage/debugCoverage.xml,
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
         min-coverage-changed-files: 60
         title: Code Coverage
-        debug-mode: false
+        debug-mode: true
 
     - name: Get the Coverage info
       run: |
