@@ -26,7 +26,7 @@ jobs:
       uses: madrapps/jacoco-report@multi-module-support
       with:
         paths: |
-          ${{ github.workspace }}/app/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
+          ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
           ${{ github.workspace }}/**/build/reports/jacoco/debugCoverage/debugCoverage.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
