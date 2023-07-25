@@ -33,8 +33,6 @@ jobs:
         min-coverage-changed-files: 60
         title: ':lobster: Coverage Report'
         update-comment: true
-        pass-emoji: ''
-        fail-emoji: ':red_circle:'
         debug-mode: true
 
     - name: Get the Coverage info
