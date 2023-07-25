@@ -3,7 +3,7 @@ package com.madrapps.text;
 /**
  * String related operation
  */
-public class StringOp implements StringOperation {
+public class StringOp implements IStringOperation {
 
     @Override
     public boolean endsWith(String source, String chars) {
