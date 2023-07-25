@@ -23,7 +23,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@multi-module-support
+      uses: madrapps/jacoco-report@custom-emoji
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/prodNormalDebugCoverage.xml,
