@@ -26,8 +26,8 @@ jobs:
       uses: madrapps/jacoco-report@coverage-diff
       with:
         paths: |
-          ${{ github.workspace }}/**/build/reports/jacoco/**/prodNormalDebugCoverage.xml,
-          ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
+          ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
+          ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
         min-coverage-changed-files: 60
