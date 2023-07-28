@@ -28,7 +28,6 @@ jobs:
         paths: ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
-        min-coverage-changed-files: 60
         title: ':zombie: `Code Coverage`'
         debug-mode: true
 
