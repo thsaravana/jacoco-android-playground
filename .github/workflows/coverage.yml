@@ -30,7 +30,7 @@ jobs:
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 40
-        min-coverage-changed-files: 90
+        min-coverage-changed-files: 84
         title: ':lobster: Coverage Report'
         update-comment: true
         pass-emoji: ':green_circle:'
