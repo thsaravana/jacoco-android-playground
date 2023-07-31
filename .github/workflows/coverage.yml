@@ -23,7 +23,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@style-title
+      uses: madrapps/jacoco-report@migration-to-typescript
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
