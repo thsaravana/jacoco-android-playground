@@ -5,6 +5,7 @@ interface MathOperation {
     fun subtract(a: Int, b: Int): Int
     fun multiply(a: Int, b: Int): Int
     fun divide(a: Int, b: Int): Int
+    fun difference(a: Int, b: Int): Int
 
     interface MathOp {
 

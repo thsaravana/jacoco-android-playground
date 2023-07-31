@@ -3,7 +3,7 @@ package com.madrapps.text;
 /**
  * String related operation
  */
-public class StringOp implements StringOperation {
+public class StringOp implements IStringOperation {
 
     @Override
     public boolean endsWith(String source, String chars) {
@@ -13,5 +13,10 @@ public class StringOp implements StringOperation {
     @Override
     public boolean startsWith(String source, String chars) {
         return source.startsWith(chars);
+    }
+
+    @Override
+    public boolean replace(String from, String to) {
+        return false;
     }
 }
