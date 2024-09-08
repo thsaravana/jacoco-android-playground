@@ -27,7 +27,7 @@ jobs:
       with:
         paths: ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: ':zombie: `Code Coverage`'
+        title: ':zombie: `Code Coverage main`'
         debug-mode: true
 
     - name: Get the Coverage info
