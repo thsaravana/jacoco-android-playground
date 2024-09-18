@@ -35,7 +35,6 @@ jobs:
         update-comment: true
         pass-emoji: ':green_circle:'
         fail-emoji: ':red_circle:'
-        comment-type: 'summary1'
         continue-on-error: true
         debug-mode: true
 
