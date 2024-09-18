@@ -20,4 +20,11 @@ public class StringOpTest {
         final boolean actual = stringOp.startsWith("something", "thing");
         assertFalse(actual);
     }
+
+    @Test
+    public void testBeginWith() {
+        final StringOp stringOp = new StringOp();
+        final boolean actual = stringOp.beginWith("something", "thing");
+        assertFalse(actual);
+    }
 }
