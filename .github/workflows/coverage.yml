@@ -29,12 +29,13 @@ jobs:
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml
         token: ${{ secrets.GITHUB_TOKEN }}
-        min-coverage-overall: 43
+        min-coverage-overall: 45
         min-coverage-changed-files: 84
         title: '# :lobster: `Coverage Report`'
         update-comment: true
         pass-emoji: ':green_circle:'
         fail-emoji: ':red_circle:'
+        comment-type: 'summary'
         debug-mode: true
 
     - name: Get the Coverage info
