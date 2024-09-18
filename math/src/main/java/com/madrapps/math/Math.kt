@@ -18,10 +18,6 @@ class Arithmetic : MathOperation {
         return a / b
     }
 
-    override fun difference(a: Int, b: Int): Int {
-        return subtract(a, b)
-    }
-
     fun modulo(a: Int, b: Int): Int {
         return a % b
     }
