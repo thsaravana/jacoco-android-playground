@@ -23,7 +23,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@main
+      uses: madrapps/jacoco-report@workflow_summary
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
