@@ -33,6 +33,7 @@ jobs:
         min-coverage-changed-files: 84
         title: '# :lobster: `Coverage Report`'
         update-comment: true
+        comment-type: 'both'
         pass-emoji: ':green_circle:'
         fail-emoji: ':red_circle:'
         continue-on-error: true
