@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val userId = "admin"
         val model: MainViewModel by viewModels()
         Log.d("App", "Validate = ${model.validate(userId)}")
-        Log.d("App", "Verify Access = ${model.verifyAccess(userId)}")
+        Log.d("App", "Verify Access = ${model.verifyAccess1(userId)}")
 
         // Math module
         val arithmetic = Arithmetic()
