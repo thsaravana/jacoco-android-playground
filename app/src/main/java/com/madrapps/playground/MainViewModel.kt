@@ -8,11 +8,7 @@ class MainViewModel : ViewModel() {
         return userId == "admin"
     }
 
-    fun verifyAccess1(userId: String): Boolean {
+    fun verifyAccess(userId: String): Boolean {
         return userId == "super-admin"
-    }
-
-    fun verifyPassword(password: String): Boolean {
-        return password.isNotBlank()
     }
 }
