@@ -34,7 +34,6 @@ jobs:
         title: '# :lobster: `Coverage Report`'
         update-comment: true
         comment-type: 'both'
-        pr-number: 16
         pass-emoji: ':green_circle:'
         fail-emoji: ':red_circle:'
         continue-on-error: true
