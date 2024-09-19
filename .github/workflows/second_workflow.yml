@@ -2,8 +2,7 @@ name: SecondWorkflow
 
 on:
   workflow_run:
-    workflows:
-      - FirstWorkflow
+    workflows: ["FirstWorkflow"]
     types:
       - completed  # This triggers only when the previous workflow completes successfully
 
