@@ -17,6 +17,6 @@ class MainViewModel : ViewModel() {
     }
 
     fun verifyPassword1(password: String): Boolean {
-        return password.isNotBlank()
+        return password.isEmpty()
     }
 }
