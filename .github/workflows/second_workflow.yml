@@ -1,0 +1,46 @@
+name: SecondWorkflow
+
+on:
+  workflow_run:
+    workflows: ["FirstWorkflow"]
+    types:
+      - completed  # This triggers only when the previous workflow completes successfully
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v1
+      with:
+        java-version: 17
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Run Module Coverage
+      run: ./gradlew prodNormalDebugCoverage debugCoverage
+
+    - name: Jacoco Report to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@more-events
+      with:
+        paths: |
+          ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
+          ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 45
+        min-coverage-changed-files: 84
+        title: '# :lobster: `Coverage Report`'
+        update-comment: true
+        comment-type: 'both'
+        pass-emoji: ':green_circle:'
+        fail-emoji: ':red_circle:'
+        continue-on-error: true
+        debug-mode: true
+
+    - name: Get the Coverage info
+      run: |
+        echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}"
+        echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
