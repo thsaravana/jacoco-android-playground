@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
   pull_request:
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
+  workflow_dispatch:
 
 jobs:
   build:
@@ -23,7 +26,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@push_pr_number
+      uses: madrapps/jacoco-report@more-events
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
