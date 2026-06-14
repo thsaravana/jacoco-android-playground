@@ -34,7 +34,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 45
         min-coverage-changed-files: 84
-        title: '# :lobster: `Coverage Report fix-283`'
+        title: '# :lobster: `Coverage Reports fix-283`'
         update-comment: true
         comment-type: 'both'
         pass-emoji: ':green_circle:'
