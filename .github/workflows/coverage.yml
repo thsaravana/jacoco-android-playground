@@ -26,15 +26,15 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@more-events
+      uses: madrapps/jacoco-report@fix-60
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 45
-        min-coverage-changed-files: 84
-        title: '# :lobster: `Coverage Report`'
+        min-coverage-changed-lines: 84
+        title: '# :lobster: `Coverage Reports fix-60`'
         update-comment: true
         comment-type: 'both'
         pass-emoji: ':green_circle:'
@@ -45,4 +45,4 @@ jobs:
     - name: Get the Coverage info
       run: |
         echo "Total coverage ${{ steps.jacoco.outputs.coverage-overall }}"
-        echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
+        echo "Changed lines coverage ${{ steps.jacoco.outputs.coverage-changed-lines }}"
