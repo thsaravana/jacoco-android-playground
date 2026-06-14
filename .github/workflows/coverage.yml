@@ -26,7 +26,7 @@ jobs:
 
     - name: Jacoco Report to PR
       id: jacoco
-      uses: madrapps/jacoco-report@main
+      uses: madrapps/jacoco-report@fix-282
       with:
         paths: |
           ${{ github.workspace }}/**/build/reports/jacoco/**/**.xml,
@@ -34,7 +34,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         min-coverage-overall: 45
         min-coverage-changed-lines: 84
-        title: '# :lobster: `Coverage Reports fix-71`'
+        title: '# :lobster: `Coverage Reports fix-60`'
         update-comment: true
         comment-type: 'both'
         pass-emoji: ':green_circle:'
